@@ -29,14 +29,12 @@ int main()
 		NOV = OCT + 31,
 		DEC = NOV + 30;
 	int months[13] = { JAN,FEB,MAR,APR,MAY,JUN,JUL,AUG,SEP,OCT,NOV,DEC,9999999 };
-
 	double hours = 0,
 		minutes = 0,
 		seconds = 0;
 	hours = floor((realTime - (years * SECONDSYEAR) - ((numOfDays + LEAPDAYS) * SECONDSDAY)) / SECONDSHOUR);
 	minutes = floor((realTime - (years * SECONDSYEAR) - ((numOfDays + LEAPDAYS) * SECONDSDAY) - hours * SECONDSHOUR) / SECONDSMINUTE);
 	seconds = floor(realTime - (years * SECONDSYEAR) - ((numOfDays + LEAPDAYS) * SECONDSDAY) - hours * SECONDSHOUR - minutes * SECONDSMINUTE);
-	printf("%lf\n", seconds);
 	for (i = 0; i < 11; i++)
 	{
 		if (numOfDays > months[i] && numOfDays < months[i + 1])
